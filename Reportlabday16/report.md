@@ -1,0 +1,7 @@
+# Báo cáo Đánh giá Kết quả Thực nghiệm LightGBM trên CPU (Lab 16)
+
+1. **Thời gian huấn luyện (Training Time):** Mô hình huấn luyện cực kỳ nhanh chỉ mất **~1.37 giây** (`1.3698s`), dừng ở `best_iteration = 1`, cho thấy thuật toán LightGBM được tối ưu rất tốt trên hạ tầng CPU.
+2. **Độ chính xác AUC-ROC:** Chỉ số AUC-ROC đạt mức rất ấn tượng **0.9517 (95.17%)** (đi kèm Accuracy 99.89% và Recall 81.63%), thể hiện khả năng phân loại bài toán gian lận tài chính vô cùng xuất sắc.
+3. **Tốc độ suy luận trên CPU (Inference Speed):** Độ trễ suy luận cho 1 mẫu dữ liệu cực thấp chỉ **~0.92 ms** (`0.9192 ms`), thông lượng xử lý đạt tới **~914,389 FPS** (mẫu/giây), đáp ứng thừa khả năng xử lý real-time mà không cần tới GPU đắt đỏ.
+4. **Đánh giá tổng quan:** Kết hợp giữa thời gian huấn luyện siêu ngắn, độ trễ thấp và AUC cao cho thấy việc triển khai mô hình dạng cây trên cấu hình CPU khiêm tốn (`e2-medium` - 2 vCPU / 4 GB RAM) mang lại hiệu quả chi phí / hiệu năng (cost-efficiency) cực cao.
+5. **Nguồn lấy thông tin:** Các chỉ số đo lường thực nghiệm được trích xuất trực tiếp từ file kết quả [`benchmark_result.json`](file:///Users/nguyenthientai/Documents/VINAI/VINAI_labs_genius/K3-Day16-NguyenThienTai-2A202601849/benchmark_result.json) và đối chiếu với kịch bản triển khai mô hình Credit Card Fraud Detection tại tài liệu [`README_gcp.md`](file:///Users/nguyenthientai/Documents/VINAI/VINAI_labs_genius/K3-Day16-NguyenThienTai-2A202601849/README_gcp.md) trong repository này.
